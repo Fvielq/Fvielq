@@ -1,0 +1,20 @@
+print('''Write a program that will check from a .txt file if an item in a list is in another list''')
+file1 = open('file1.txt', 'r')
+list_file1 = []
+for x in file1:
+    list_file1.append(x.strip().lower())
+print("list1: ", list_file1)
+
+file2 = open('file2.txt', 'r')
+list_file2 = []
+for x in file2:
+    list_file2.append(x.strip().lower())
+print("list2: ", list_file2)
+i=0
+for y in range(len(list_file2)):
+    result = list_file1.count(list_file2[i])
+    if result > 0:
+        print(list_file2[i], 'item in list2 is in list1')
+    else:
+        print(list_file2[i], 'item in list2 is not in list1')
+    i+=1
